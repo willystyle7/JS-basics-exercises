@@ -1,0 +1,44 @@
+<DOCTYPE! html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+</head>
+<body>
+	<form> 
+		<label for="num1">First Number</label>
+		<input type="text" id="num1">
+		 <select id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select> 
+		<label for="num2">Second Number</label>
+		<input type="text" id="num2">
+		<input type="button" onclick="calculator()" value="Calculate">
+	</form>
+	<div>Result: <span id="result"></span></div>
+	<script type="text/javascript" language="javascript">
+		function calculator() {
+			let x = Number(document.getElementById("num1").value);
+			let y = Number(document.getElementById("num2").value);
+			let operator = String(document.getElementById("operator").value);			
+			switch (operator) {
+				case "+":
+					document.getElementById("result").textContent = x + y;
+					break;
+				case "-":
+					document.getElementById("result").textContent = x - y;
+					break;
+				case "*":
+					document.getElementById("result").textContent = x * y;
+					break;
+				case "/":
+					document.getElementById("result").textContent = x / y;
+					break;
+			}
+			
+		}
+	</script>
+</body>
